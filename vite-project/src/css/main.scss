@@ -1,0 +1,148 @@
+// color
+
+$dark-color: #333333;
+$med-color: #666666;
+$light-color: #f5f5f5;
+
+//accent colors
+$light-accent1: #d5af10;
+$light-accent2: #be6310;
+$dark-accent1: #00a8a8;
+$dark-accent2: #264653;
+
+// border-radius
+$border-radius3: 0.1875rem;
+$border-radius5: 0.3125rem;
+
+// special font
+$gigantic: 4rem; //64px
+$logo: 2rem; // 32px
+
+@mixin flexdisplay($direction, $justifycontent: none, $alignItems: none) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifycontent;
+    align-items: $alignItems;
+}
+// global defaults
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+body {
+    color: $dark-color;
+    height: 100%;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.btn {
+    background-color: $dark-color;
+    color: $light-color;
+}
+
+footer {
+    background-color: $dark-color;
+    color: $light-color;
+}
+a:link,
+a:visited,
+a:active {
+    color: $light-color;
+    text-decoration: none;
+}
+a:hover {
+    color: $light-color;
+    text-decoration: underline;
+}
+* {
+    font-family: "Arial", "Verdana", "sans-serif";
+}
+
+* {
+    box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    text-transform: capitalize;
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.75rem;
+}
+h3 {
+    font-size: 1.375rem;
+}
+h4 {
+    font-size: 1.25rem;
+}
+h5 {
+    font-size: 1.125rem;
+}
+.logo {
+    font-size: 2rem;
+    color: $light-color;
+}
+.btn {
+    cursor: pointer;
+    color: $light-color;
+    border: transparent;
+    border-radius: $border-radius3;
+    padding: 0.375rem 0.75rem;
+    display: inline-block;
+}
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+section {
+    margin: 50px 0;
+}
+
+.page-center {
+    @include flexdisplay(column, flex-start, center);
+    height: 100vh;
+}
+
+header {
+    @include flexdisplay(row, space-between, center);
+    background-color: $med-color;
+    width: 100%;
+    padding-left: 5px;
+    color: $light-color;
+    height: 50px;
+
+    .logo {
+        font-size: $logo;
+    }
+
+    nav {
+        @include flexdisplay(row, flex-end, center);
+        gap: 20px;
+    }
+}
+
+.page-home {
+    margin-top: 40px;
+    color: $dark-color;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
